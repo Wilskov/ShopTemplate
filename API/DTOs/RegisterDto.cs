@@ -1,20 +1,18 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace API.Entities
+namespace API.DTOs
 {
-    public class User
-    {
-        #region Properties
-        public int Id { get; set; }
+    public class RegisterDto
+    {   
         [Required]
         public string UserName { get; set; }
         [Required]
         public string LastName { get; set; }
         [Required]
         public string Email { get; set; }
-        public  byte[] PasswordHash { get; set; }
-        public  byte[] PasswordSalt { get; set; }
+        [Required]
+        public string Password { get; set; }
+
         
-        #endregion
     }
 }

@@ -5,10 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [ApiController] // attribute
-    [Route("api/[controller]")] // route => /api/users
-
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController
     {
         #region Properties
         private readonly DataContext _context;
