@@ -1,10 +1,13 @@
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
-{
+{   
+    [Authorize] /* A decorator that allows you to restrict access
+    to a controller or method. */
     public class UsersController : BaseApiController
     {
         #region Properties
@@ -19,6 +22,8 @@ namespace API.Controllers
         #endregion
 
         #region Méthodes
+        /* It allows anonymous users to access the method. */
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
         {
@@ -31,7 +36,6 @@ namespace API.Controllers
         {
             return await _context.Users.FindAsync(id);
         }
-
         #endregion
     }
 }

@@ -1,43 +1,45 @@
+using System.Text;
 using API.Data;
+using API.Extensions;
 using API.Interfaces;
 using API.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-
-/* Adding the DataContext to the services. Using Sqlite in development */
-builder.Services.AddDbContext<DataContext>(opt => 
-{
-    opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
-builder.Services.AddCors();
-builder.Services.AddScoped<ITokenService, TokenService>();
+/* Adding the services to the container. => API\Extensions\ApplicationServiceExtensions.cs*/
+builder.Services.AddApplicationServices(builder.Configuration);
+/* Adding the services to the container. => API\Extensions\IdentityServiceExtensions.cs*/
+builder.Services.AddApplicationServices(builder.Configuration);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 // builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+/* 
 
 // Configure the HTTP request pipeline.
-/*  
- */
+ 
+ 
 // if (app.Environment.IsDevelopment())
 // {
 //     app.UseSwagger();
 //     app.UseSwaggerUI();
 // }
-
+*/
 /* Allowing the Angular app to make requests to the API. */
 app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
-app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
+//app.UseHttpsRedirection();
 app.MapControllers();
 
 app.Run();

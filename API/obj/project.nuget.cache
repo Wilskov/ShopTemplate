@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "t46Bn/xv/sxMyNSi5rF6fZaaOa9yDM3Jn8uhlV1bFtzVBEHk93i7ko0FAJeLcs34NgBrzAAXzYaDw/wCrB0+/A==",
+  "dgSpecHash": "WGFmpO7GsNXBvqGSp1yzlafNYzmUgZowlC/Os4KoMV467lB0QIDJFFnh0Y83uSVG8ATPobbbaKGVX/8hW9GG2Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wilskov\\source\\repos\\ShopTemplate\\API\\API.csproj",
+  "projectFilePath": "c:\\Users\\wilskov\\source\\repos\\ShopTemplate\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wilskov\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\wilskov\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.12\\microsoft.aspnetcore.authentication.jwtbearer.6.0.12.nupkg.sha512",
     "C:\\Users\\wilskov\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\wilskov\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.12\\microsoft.data.sqlite.core.6.0.12.nupkg.sha512",
     "C:\\Users\\wilskov\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.12\\microsoft.entityframeworkcore.6.0.12.nupkg.sha512",
@@ -27,6 +28,8 @@
     "C:\\Users\\wilskov\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.25.1\\microsoft.identitymodel.abstractions.6.25.1.nupkg.sha512",
     "C:\\Users\\wilskov\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.25.1\\microsoft.identitymodel.jsonwebtokens.6.25.1.nupkg.sha512",
     "C:\\Users\\wilskov\\.nuget\\packages\\microsoft.identitymodel.logging\\6.25.1\\microsoft.identitymodel.logging.6.25.1.nupkg.sha512",
+    "C:\\Users\\wilskov\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.10.0\\microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
+    "C:\\Users\\wilskov\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.10.0\\microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
     "C:\\Users\\wilskov\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.25.1\\microsoft.identitymodel.tokens.6.25.1.nupkg.sha512",
     "C:\\Users\\wilskov\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\wilskov\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
