@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WGFmpO7GsNXBvqGSp1yzlafNYzmUgZowlC/Os4KoMV467lB0QIDJFFnh0Y83uSVG8ATPobbbaKGVX/8hW9GG2Q==",
+  "dgSpecHash": "MIkAYRMUBjz+NRHf1CtmJOuI7S3Lw5bGJnJFiVdZrVocjPr4diJtrqXlOovkLUwAQ4PXKMCzZy3TMYgvxQqKsA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\wilskov\\source\\repos\\ShopTemplate\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\wilskov\\source\\repos\\ShopTemplate\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wilskov\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\wilskov\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.12\\microsoft.aspnetcore.authentication.jwtbearer.6.0.12.nupkg.sha512",

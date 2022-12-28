@@ -1957,11 +1957,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\wilskov\\source\\repos\\ShopTemplate\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\wilskov\\source\\repos\\ShopTemplate\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "c:\\Users\\wilskov\\source\\repos\\ShopTemplate\\API\\API.csproj",
+      "projectPath": "C:\\Users\\wilskov\\source\\repos\\ShopTemplate\\API\\API.csproj",
       "packagesPath": "C:\\Users\\wilskov\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\wilskov\\source\\repos\\ShopTemplate\\API\\obj\\",
+      "outputPath": "C:\\Users\\wilskov\\source\\repos\\ShopTemplate\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\wilskov\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1971,6 +1971,7 @@
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
