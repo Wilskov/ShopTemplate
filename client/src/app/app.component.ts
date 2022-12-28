@@ -1,40 +1,28 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from './_models/user';
 import { AccountService } from './_services/account.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
-  
-  title = 'Shop Command';
-  users: any;
+export class AppComponent implements OnInit {
 
-  constructor(private http: HttpClient, private accountService: AccountService){}
+    title = 'Shop Command';
 
-  ngOnInit(): void {
-    this.getUsers();
-    this.setCurrentUser();
-  }
+    constructor(private accountService: AccountService) { }
 
-  getUsers() {
-    this.http.get('https://localhost:5001/api/users').subscribe({
-      next: response => this.users = response,
-      error: error => console.log(error),
-      complete: () => console.log("Request has completed")
+    ngOnInit(): void {
+        this.setCurrentUser();
+    }
 
-    })
-  }
+    setCurrentUser() {
+        const userString = localStorage.getItem('user');
 
-  setCurrentUser() {
-    const userString = localStorage.getItem('user');
+        if (!userString) return;
 
-    if (!userString) return;
-
-    const user: User = JSON.parse(userString);
-    this.accountService.setCurrentUser(user);
-  }
+        const user: User = JSON.parse(userString);
+        this.accountService.setCurrentUser(user);
+    }
 }
