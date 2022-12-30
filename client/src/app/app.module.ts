@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ToastrModule } from 'ngx-toastr';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,7 +36,10 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
