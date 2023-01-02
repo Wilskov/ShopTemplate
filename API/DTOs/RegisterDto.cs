@@ -11,6 +11,7 @@ namespace API.DTOs
         [Required]
         public string Email { get; set; }
         [Required]
+        [StringLength(8, MinimumLength = 4)] // TODO change MinimumLength for more security
         public string Password { get; set; }
 
         
