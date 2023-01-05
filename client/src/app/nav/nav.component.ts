@@ -26,12 +26,12 @@ export class NavComponent implements OnInit {
 
 	login() {
 		this.accountService.login(this.model).subscribe({
-			next: _ => this.router.navigateByUrl('/members'), // 'underscore' is using when you don't use any arguement 
+			next: _ => this.router.navigateByUrl('/products'), // 'underscore' is using when you don't use any arguement 
 			error: error => {
 				console.log('====================================');
 				console.log(error);
 				console.log('====================================');
-			}//TODO Look for the error transcritption result is [object object]
+			}
 		});
 	}
 
@@ -40,6 +40,11 @@ export class NavComponent implements OnInit {
 		this.router.navigateByUrl('/');
 
 	};
+
+	FirstLetterToUppercase(str: string): string {
+		return str.charAt(0).toUpperCase() + str.slice(1);
+	}
+	  
 }
 
 

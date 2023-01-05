@@ -1,41 +1,51 @@
-using API.Data;
 using API.Entities;
-using Microsoft.AspNetCore.Authorization;
+using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
-{   
-    [Authorize] /* A decorator that allows you to restrict access
+{
+    /* [Authorize] A decorator that allows you to restrict access
     to a controller or method. */
     public class UsersController : BaseApiController
     {
         #region Properties
-        private readonly DataContext _context;
+        private readonly IUserRepository _userRepository;
+        /* private readonly IMapper _mapper;*/
+                                                
         #endregion
+       
 
         #region Controller
-        public UsersController(DataContext context)
+        public UsersController(IUserRepository userRepository /*, IMapper mapper */)
         {
-            _context = context;
+            _userRepository = userRepository;
+            /* _mapper = mapper; */
         }
         #endregion
 
         #region Méthodes
-        /* It allows anonymous users to access the method. */
-        [AllowAnonymous]
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
         {
-            var users = await _context.Users.ToListAsync();
-            return users;
+            //var users = await _userRepository.GetUsersAsync();
+            //var userToReturn = _mapper.Map<IEnumerable<MemberDto>>(users);
+            // return Ok(userToReturn).
+            return Ok( await _userRepository.GetUsersAsync());
         }
         
-        [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(int id)
+        [HttpGet("{username}")]
+        public async Task<ActionResult<User>> GetUser(string username)
         {
-            return await _context.Users.FindAsync(id);
+            return await _userRepository.GetUserByUserNameAsync(username);
         }
+      
+       /* [HttpGet("{id}")]
+         public async Task<ActionResult<User>> GetUserId(int id)
+        {
+            return await _userRepository.GetUserById(id);
+        } */
+
         #endregion
     }
 }

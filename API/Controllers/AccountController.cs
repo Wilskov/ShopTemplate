@@ -36,15 +36,15 @@ namespace API.Controllers
         [HttpPost("register")] // POST: api/account/register
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
-            if (await UserExist(registerDto.UserName)) 
+            if (await UserExist(registerDto.Username)) 
             return BadRequest("User already exists");
             
             using var hmac = new HMACSHA512();
             
             var user = new User
             {
-                UserName = registerDto.UserName.ToLower(),
-                LastName = registerDto.LastName.ToLower(),
+                UserName = registerDto.Username.ToLower(),
+                LastName = registerDto.Lastname.ToLower(),
                 Email = registerDto.Email.ToLower(),
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
                 PasswordSalt = hmac.Key
@@ -55,7 +55,7 @@ namespace API.Controllers
 
             return new UserDto
             {
-                UserName = user.UserName,
+                Username = user.UserName,
                 Token = _tokenService.CreateToken(user)
             };
         }
@@ -92,7 +92,7 @@ namespace API.Controllers
 
             return new UserDto
             {
-                UserName = user.UserName,
+                Username = user.UserName,
                 Token = _tokenService.CreateToken(user)
             };
         }
@@ -104,10 +104,10 @@ namespace API.Controllers
      /// > This function checks if the user exists in the database
      /// </summary>
      /// <param name="UserName">The first name of the user.</param>
-        private async Task<bool> UserExist(string userName)
+        private async Task<bool> UserExist(string username)
         {
             /* boucle sur toute la table Users */
-            return await _context.Users.AnyAsync(x => x.UserName == userName.ToLower()); 
+            return await _context.Users.AnyAsync(x => x.UserName == username.ToLower()); 
         }
         // TODO => UserExist method compare the email and the UserName?
 

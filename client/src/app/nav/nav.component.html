@@ -3,10 +3,10 @@
 		<a class="navbar-brand" routerLink="/" routerLinkActive="active">Shopping</a>
 		<ul class="navbar-nav me-auto mb-2 mb-md-0">
 			<ng-container *ngIf="accountService.currentUser$ | async">
-				<!-- rend innaccessible pour toutes les routes -->
 				<li class="nav-item">
-					<a class="nav-link" routerLink="/members" routerLinkActive="active">Products</a>
+					<a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
 				</li>
+				<!-- rend innaccessible pour toutes les routes -->
 				<li class="nav-item">
 					<a class="nav-link" routerLink="/lists" routerLinkActive="active">Shopping cart</a>
 				</li>
@@ -19,7 +19,7 @@
 			</li>
 		</ul>
 		<div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
-			<a class="dropdown-toggle text-white text-decoration-none" dropdownToggle>Welcome {{user.username}}</a><!-- TODO username dont working check!!! -->
+			<a class="dropdown-toggle text-white text-decoration-none" dropdownToggle>Welcome {{FirstLetterToUppercase(user.username)}}</a>
 			<div class="dropdown-menu mt-3" *dropdownMenu>
 				<a href="/" class="dropdown-item">Edit profile</a>
 				<a href="/" class="dropdown-item" (click)="logout()">Logout</a>
