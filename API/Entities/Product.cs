@@ -22,7 +22,5 @@ namespace API.Entities
         {
             get { return Price * Quantity; }
         }
-
-        public bool IsInCart { get; internal set; }
     }
 }

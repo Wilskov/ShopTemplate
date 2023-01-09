@@ -24,6 +24,7 @@ export class NavComponent implements OnInit {
 		this.currentUser$ = this.accountService.currentUser$;
 	}
 
+
 	login() {
 		this.accountService.login(this.model).subscribe({
 			next: _ => this.router.navigateByUrl('/products'), // 'underscore' is using when you don't use any arguement 

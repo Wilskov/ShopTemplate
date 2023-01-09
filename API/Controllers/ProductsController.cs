@@ -1,3 +1,4 @@
+using API.Data;
 using API.Entities;
 using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -30,5 +31,12 @@ namespace API.Controllers
             return await _productRepository.AddNewProduct(name, category, description, price);
         }
 
+        [HttpDelete]
+        public async Task<ActionResult<Product>> DeleteProduct(int id)
+        {
+            return await _productRepository.DeleteProduct(id);
+        }
+
     }
 }
+    

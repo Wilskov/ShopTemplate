@@ -24,10 +24,10 @@ namespace API.Extensions
             services.AddScoped<IUserRepository, UserRepository>();
             
             services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
- 
+/*             services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
+ */ 
             /* Adding the AutoMapperService */
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());            
+           /*  services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());       */      
             return services;
         }
     }

@@ -1,0 +1,82 @@
+[
+    {
+      "Name": "Shaffer",
+      "Description": "Minim deserunt commodo veniam proident et reprehenderit incididunt commodo.",
+      "Category": "ayerslyons@geekfarm.com",
+      "IsAvailable": false,
+      "Price": 9,
+      "Quantity": 5
+    },
+    {
+      "Name": "Aguirre",
+      "Description": "Culpa anim elit id nulla magna incididunt deserunt mollit voluptate nostrud.",
+      "Category": "milagrostownsend@zillan.com",
+      "IsAvailable": false,
+      "Price": 2,
+      "Quantity": 3
+    },
+    {
+      "Name": "Moran",
+      "Description": "Deserunt occaecat proident magna fugiat aliqua exercitation commodo velit officia nulla eiusmod tempor mollit.",
+      "Category": "levinemathis@grok.com",
+      "IsAvailable": false,
+      "Price": 5,
+      "Quantity": 7
+    },
+    {
+      "Name": "Padilla",
+      "Description": "Sunt exercitation aliqua qui sit in elit ex reprehenderit culpa ut.",
+      "Category": "vinsonstone@centregy.com",
+      "IsAvailable": false,
+      "Price": 8,
+      "Quantity": 1
+    },
+    {
+      "Name": "Warner",
+      "Description": "Do minim ea amet sit dolore laborum dolore sint ipsum.",
+      "Category": "deidrejuarez@portaline.com",
+      "IsAvailable": true,
+      "Price": 10,
+      "Quantity": 7
+    },
+    {
+      "Name": "Mcmillan",
+      "Description": "Id officia tempor amet veniam officia cupidatat.",
+      "Category": "knappmeyer@farmex.com",
+      "IsAvailable": false,
+      "Price": 4,
+      "Quantity": 2
+    },
+    {
+      "Name": "Rojas",
+      "Description": "Enim esse dolore fugiat incididunt eiusmod pariatur.",
+      "Category": "owensjames@xymonk.com",
+      "IsAvailable": false,
+      "Price": 9,
+      "Quantity": 6
+    },
+    {
+      "Name": "Castaneda",
+      "Description": "Occaecat proident reprehenderit esse et officia ut enim mollit exercitation.",
+      "Category": "hermanthomas@zensure.com",
+      "IsAvailable": false,
+      "Price": 9,
+      "Quantity": 1
+    },
+    {
+      "Name": "Bullock",
+      "Description": "In incididunt adipisicing minim ea excepteur exercitation et est enim velit in elit dolore amet.",
+      "Category": "beckyhinton@recognia.com",
+      "IsAvailable": false,
+      "Price": 3,
+      "Quantity": 8
+    },
+    {
+      "Name": "Haley",
+      "Description": "Consequat anim exercitation Lorem dolore occaecat exercitation id cillum.",
+      "Category": "sharpelee@zidox.com",
+      "IsAvailable": true,
+      "Price": 5,
+      "Quantity": 10
+    }
+  ]

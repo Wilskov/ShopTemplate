@@ -10,9 +10,6 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ListsComponent } from './lists/lists.component';
-import { MessagesComponent } from './messages/messages.component';
-import { MemberListComponent } from './members/member-list/member-list.component';
-import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
@@ -20,8 +17,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
-
-
+import { ProductComponent } from './products/product/product.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +26,12 @@ import { ProductListComponent } from './products/product-list/product-list.compo
     HomeComponent,
     RegisterComponent,
     ListsComponent,
-    MessagesComponent,
-    MemberListComponent,
-    MemberDetailComponent,
     TestErrorComponent,
     NotFoundComponent,
     ServerErrorComponent,
     ProductDetailComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

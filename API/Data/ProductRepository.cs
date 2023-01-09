@@ -36,7 +36,7 @@ namespace API.Data
             return product;
         }
 
-        public async Task<Product> Delete(int id)
+        public async Task<Product> DeleteProduct(int id)
         {
             var product = await _context.Products.FindAsync(id);
             if (product == null)

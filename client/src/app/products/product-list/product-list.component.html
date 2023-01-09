@@ -1,1 +1,22 @@
-
+<div class="card mb-5" *ngFor="let product of products">
+  <div class="card-img-warpper">
+    <img src="" alt="" class="card-img-top" />
+  </div>
+  <div class="card-body p-4">
+    <h6 class="card-title text-center mb-1 p-2">
+      {{ product.name }} {{ product.price }} €
+    </h6>
+    <div>
+      <p class="card-text text-muted text-center list-unstyled">
+        {{ product.description }}
+      </p>
+      <div class="d-flex justify-content-center">
+        <a class="btn btn-primary mx-2" type="button" [routerLink]="['../product', product.id]"
+        >Details</a>
+        <button class="btn btn-primary mx-2" type="button" (click)="addProduct()">click me</button>
+      </div>
+      <div class="list-inline-item list-unstyled">
+      </div>
+    </div>
+  </div>
+</div>

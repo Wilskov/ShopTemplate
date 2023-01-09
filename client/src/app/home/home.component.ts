@@ -26,9 +26,19 @@ export class HomeComponent implements OnInit {
         })
     }
 
+    getProducts() {
+        this.http.get('https://localhost:5001/api/products').subscribe({
+            next: response => this.users = response,
+            error: error => console.log(error),
+            complete: () => console.log("Request has completed")
+        })
+    }
+
     registerToggle() {
         this.registerMode = !this.registerMode;
     }
+
+    //TODO - add here => productToggle() { } need toadd this method for the prducts registrement
 
     cancelRegisterMode(event: boolean) {
         this.registerMode = event;

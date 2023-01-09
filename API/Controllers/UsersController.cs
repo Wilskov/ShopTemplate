@@ -1,14 +1,16 @@
 using API.Entities;
 using API.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    /* [Authorize] A decorator that allows you to restrict access
+    [Authorize]/*  A decorator that allows you to restrict access
     to a controller or method. */
     public class UsersController : BaseApiController
     {
         #region Properties
+
         private readonly IUserRepository _userRepository;
         /* private readonly IMapper _mapper;*/
                                                 
@@ -28,9 +30,6 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
         {
-            //var users = await _userRepository.GetUsersAsync();
-            //var userToReturn = _mapper.Map<IEnumerable<MemberDto>>(users);
-            // return Ok(userToReturn).
             return Ok( await _userRepository.GetUsersAsync());
         }
         

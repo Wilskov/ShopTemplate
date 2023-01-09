@@ -5,11 +5,8 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { HomeComponent } from './home/home.component';
 import { ListsComponent } from './lists/lists.component';
-import { MemberDetailComponent } from './members/member-detail/member-detail.component';
-import { MemberListComponent } from './members/member-list/member-list.component';
-import { MessagesComponent } from './messages/messages.component';
-import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
+import { ProductComponent } from './products/product/product.component';
 import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
@@ -19,10 +16,9 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
-      { path: 'products', component: ProductListComponent },
-      { path: 'product', component: ProductDetailComponent },
+      { path: 'product-list', component: ProductListComponent },
+      { path: 'product/:id', component: ProductComponent },
       { path: 'lists', component: ListsComponent },
-      { path: 'messages', component: MessagesComponent },
     ]
   },
   { path: 'errors', component: TestErrorComponent },
