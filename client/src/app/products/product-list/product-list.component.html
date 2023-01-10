@@ -11,11 +11,9 @@
         {{ product.description }}
       </p>
       <div class="d-flex justify-content-center">
-        <a class="btn btn-primary mx-2" type="button" [routerLink]="['../product', product.id]"
-        >Details</a>
+        <a class="btn btn-primary mx-2" type="button" [routerLink]="['../product', product.id]">Details</a>
+        <a class="btn btn-primary mx-2" type="button" [routerLink]="['../lists', this.product.id]">Add to my shop cart</a>
         <button class="btn btn-primary mx-2" type="button" (click)="addProduct()">click me</button>
-      </div>
-      <div class="list-inline-item list-unstyled">
       </div>
     </div>
   </div>

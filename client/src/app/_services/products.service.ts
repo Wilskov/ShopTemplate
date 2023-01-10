@@ -16,30 +16,39 @@ export class ProductsService {
     constructor(private http: HttpClient) { }
 
     getProducts() : Observable<Product[]>{
-        console.log("service enter");
         return this.http.get<Product[]>(this.baseUrl + 'products')
     }
 
-    getProductId() : Observable<Product> {
-       return this.http.get<Product>(this.baseUrl + 'product/id')
-    }
-
-    addProduct(model: any) {
-        return this.http.post<Product>(this.baseUrl + 'product', model).pipe(
+    getProductId(model: any)  {
+        return this.http.get<Product>(this.baseUrl + 'product/id').pipe(
             map((response: Product) => {
                 const product = response;
+                if (product) {
+                    this.currentProductSource.next(product);
+                }
+            })
+        );
+    }
+// TODO test this method
+/*     addProduct(model: any) {
+        console.log("service enter")
+        return this.http.post<Product>(this.baseUrl + 'addtolist', model).pipe(
+            map((response: Product) => {
+                const product = response;
+                console.log("service enter" , product)
                 if (product) {
                     localStorage.setItem('product', JSON.stringify(product));
                     this.currentProductSource.next(product);
                 }
             })
         );
-    }
- 
+    } 
+    */
+ //TODO: check if it is necessary to implement this method
   /*   removeProduct() {
         localStorage.removeItem('product');
         this.currentProductSource.next(null);
-    } *///TODO: check if it is necessary to implement this method
+    } */
 
     updateProduct(model: any) {
         return this.http.put<Product>(this.baseUrl + 'product/id', model)

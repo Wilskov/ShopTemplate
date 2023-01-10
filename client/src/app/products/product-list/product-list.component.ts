@@ -10,45 +10,39 @@ import { ProductsService } from 'src/app/_services/products.service';
     styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-    @Input() product: any;
-    @Output() removeProduct = new EventEmitter();
+/*     @Input() product: any;
+ */    
+    
+    currentProduct$: Observable<Product | null> = of(null);
     model: any = {};
-     currentProduct$: Observable<Product | null> = of(null);
-     
     products: any = [];
    
     constructor(public productsService: ProductsService) { }
 
     ngOnInit(): void {
-        this.productsService.getProducts().subscribe(
-           products => this.products = products);
+        this.getProducts();
+        this.currentProduct$ = this.productsService.currentProduct$;
     }
 
     getProducts() {
         this.productsService.getProducts().subscribe({
-            next: _ => this.getProducts(),
+            next: products => this.products = products,
             error: error => {
-                console.log('====================================');
                 console.log(error);
-                console.log('====================================');
             }
         });
     }
-
-    addProduct() {
+//TODO test
+/*     addProduct() {
         this.productsService.addProduct(this.model).subscribe({
             next: _ => this.productsService.setCurrentProduct(this.model),
             error: error => {
-                console.log('====================================');
                 console.log(error);
-                console.log('====================================');
             }
         });
-    }
+    } */
 
-    remove() {
-        this.removeProduct.emit(false);
-    }
+    
 
 
 

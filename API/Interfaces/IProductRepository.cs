@@ -1,5 +1,6 @@
 using API.DTOs;
 using API.Entities;
+using Microsoft.AspNetCore.Mvc;
 
 namespace API.Interfaces
 {
@@ -11,7 +12,8 @@ namespace API.Interfaces
         Task<IEnumerable<Product>> GetProductsAsync();
         void UpdateProduct(Product product);
         Task<bool> SaveAllAsync();
-        /* Task<IEnumerable<ProductDto>> GetProductsDtoListAsync(string name, string category, string description, decimal price);
-        Task<ProductDto> GetProductDtoAsync(string name, string category, string description, decimal price); */
+        //TODO: Test & implement
+       /*  Task<ActionResult<IEnumerable<Product>>> AddProductToList(string name, string category, string description, decimal price); */
+    
     }
 }

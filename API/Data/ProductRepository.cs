@@ -1,5 +1,6 @@
 using API.Entities;
 using API.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
@@ -17,11 +18,7 @@ namespace API.Data
             return await _context.Products.ToListAsync();
         }
 
-        public async Task<Product> GetProductByIdAsync(int id)
-        {
-            return await _context.Products.FindAsync(id);
-        }
-
+        #region Admin Methodes
         public async Task<Product> AddNewProduct(string name, string category, string description, decimal price)
         {
             var product = new Product
@@ -35,7 +32,6 @@ namespace API.Data
             await _context.SaveChangesAsync();
             return product;
         }
-
         public async Task<Product> DeleteProduct(int id)
         {
             var product = await _context.Products.FindAsync(id);
@@ -49,15 +45,41 @@ namespace API.Data
 
             return product;
         }
-        
-        public async Task<bool> SaveAllAsync()
-        {
-           return await _context.SaveChangesAsync() > 0;
-        }
-        
         public void UpdateProduct(Product product)
         {
              _context.Entry(product).State = EntityState.Modified;
         }
+        #endregion
+
+        #region User Methodes
+        public async Task<Product> GetProductByIdAsync(int id)
+        {
+            return await _context.Products.FindAsync(id);
+        }
+
+        //TODO Test & implement 
+/*         
+        public  async Task<ActionResult<IEnumerable<Product>>> AddProductToList(string name, string category, string description, decimal price)
+        {
+            var product = new Product
+            {
+                Name = name,
+                Category = category,
+                Description = description,
+                Price = price
+            };
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
+            return await _context.Products.ToListAsync();
+        }
+ */
+        
+        #endregion
+        public async Task<bool> SaveAllAsync()
+        {
+           return await _context.SaveChangesAsync() > 0;
+        }
+
+   
     }
 }  

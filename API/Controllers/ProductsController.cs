@@ -30,6 +30,13 @@ namespace API.Controllers
         {
             return await _productRepository.AddNewProduct(name, category, description, price);
         }
+        //TODO: Test & implement
+     /*    [HttpPost("addtolist")]
+        public async Task<ActionResult<IEnumerable<Product>>> AddProductToList(string name, string category, string description, decimal price)
+        {
+            return Ok(await _productRepository.AddProductToList(name, category, description, price));
+        } */
+     
 
         [HttpDelete]
         public async Task<ActionResult<Product>> DeleteProduct(int id)

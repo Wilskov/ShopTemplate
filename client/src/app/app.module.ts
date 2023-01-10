@@ -15,7 +15,6 @@ import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
-import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductComponent } from './products/product/product.component';
 
@@ -29,7 +28,6 @@ import { ProductComponent } from './products/product/product.component';
     TestErrorComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    ProductDetailComponent,
     ProductListComponent,
     ProductComponent
   ],

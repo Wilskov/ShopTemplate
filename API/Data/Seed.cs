@@ -12,7 +12,7 @@ namespace API.Data
         {
             if (await context.Users.AnyAsync()) return;
 
-            var userData = await System.IO.File.ReadAllTextAsync("Data/UserSeedData.json");
+            var userData = await System.IO.File.ReadAllTextAsync("Data/seed/UserSeedData.json");
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
